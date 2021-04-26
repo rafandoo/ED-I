@@ -1,10 +1,11 @@
 import java.util.Scanner;
-public class data2 {
+public class Data2 {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 		int x = 0;
 		boolean y = true;
-		data tdata = new data();
+		Data tdata = new Data();
 		while (y=true) {
 			System.out.println("Sistema validador de datas");
 			System.out.println("\n1- Validação separada");
@@ -30,7 +31,7 @@ public class data2 {
 			default:
 				System.out.println("opção invalida!");
 			}
-
+			entrada.close();
 		}
 	}
 }
