@@ -1,5 +1,5 @@
 
-public class comanda {
+public class Comanda {
 	private String comanda;
 	private double valor;
 	private String mesas;

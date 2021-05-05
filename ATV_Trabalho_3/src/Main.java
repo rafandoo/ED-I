@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class main {
+public class Main {
 	
 	//METODO PARA LIMPAR A TELA DE SAIDA
 	private static void limpaTela() {
@@ -21,6 +21,7 @@ public class main {
 	}
 	
 	//CARDAPIO DE BEBIDAS
+	@SuppressWarnings("resource")
 	public static float cardBebidas() {
 		int esc;
 		System.out.println("==            CARDAPIO DE BEBIDAS            ==");
@@ -70,11 +71,11 @@ public class main {
 	public static void main(String[] args) {
 		Scanner ent = new Scanner(System.in);
 		ListaS rest = new ListaS();
-		filaRestaurante filaR = new filaRestaurante();
-		adm admin = new adm();
-		pratos pp = new pratos();
-		comanda c;
-		mesas m;
+		FilaRestaurante filaR = new FilaRestaurante();
+		Adm admin = new Adm();
+		Pratos pp = new Pratos();
+		Comanda c;
+		Mesas m;
 		char opc;
 		boolean abrir = false;
 		
@@ -93,7 +94,7 @@ public class main {
 							while(i!=11) {
 								
 								if(i==1) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("1");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -101,7 +102,7 @@ public class main {
 									i++;
 								}
 								if(i==2) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("2");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -109,7 +110,7 @@ public class main {
 									i++;
 								}
 								if(i==3) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("3");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -117,7 +118,7 @@ public class main {
 									i++;
 								}
 								if(i==4) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("4");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -125,7 +126,7 @@ public class main {
 									i++;
 								}
 								if(i==5) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("5");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -133,7 +134,7 @@ public class main {
 									i++;
 								}
 								if(i==6) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("6");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -141,7 +142,7 @@ public class main {
 									i++;
 								}	
 								if(i==7) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("7");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -149,7 +150,7 @@ public class main {
 									i++;
 								}
 								if(i==8) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("8");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -157,14 +158,14 @@ public class main {
 									i++;
 								}
 								if(i==9) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("9");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
 									i++;
 								}
 								if(i==10) {
-									m = new mesas();
+									m = new Mesas();
 									m.setMesa("10");
 									rest.inserirIni(m);
 									filaR.inserirFimR(i);
@@ -183,8 +184,8 @@ public class main {
 					
 				case '2':
 					if (abrir) {
-						c = new comanda();
-						m = new mesas();
+						c = new Comanda();
+						m = new Mesas();
 						
 						if(filaR.ehVazioFR()) {
 							System.out.println("Não tem ninguem na fila para o buffet");
@@ -302,7 +303,7 @@ public class main {
 									System.out.println("\n=Deseja realizar o pagamento? (S/N)");
 									String escl = ent.next().toUpperCase();
 									if(escl.charAt(0) == 'S') {
-										m = new mesas();
+										m = new Mesas();
 										rest.pagaComanda(numC);
 										m.setMesa(mesa);
 										rest.inserirUlt(m);
@@ -335,7 +336,7 @@ public class main {
 						String escl = ent.next().toUpperCase();
 						if(escl.charAt(0) == 'S') {
 							limpaTela();
-							m = new mesas();
+							m = new Mesas();
 							System.out.println("=== RELATORIOS GERENCIAIS ===");
 							System.out.print("\n\n= Numero de pessoas na fila do restaurante: "+filaR.getTotalRest());
 							System.out.print("\n= Numero de pessoas na fila do caixa: "+filaR.getTotalCX());
@@ -345,6 +346,7 @@ public class main {
 							System.out.print("\n= Numero de mesas livres: "+rest.getQuantMesas());
 							System.out.print("\n= Fluxo total de caixa: "+arredondar(admin.getMovTotal()));
 							System.out.println("\n\nTecle <enter>, para continuar");
+							@SuppressWarnings("unused")
 							String pause = ent.nextLine();
 							clearBuffer(ent);
 						} else {

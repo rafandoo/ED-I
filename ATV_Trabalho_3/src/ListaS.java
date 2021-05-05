@@ -2,11 +2,11 @@
 public class ListaS {
 
 	
-	mesas m = new mesas();
+	Mesas m = new Mesas();
 	
 	//ATRIBUTOS
-	private nodo prim;
-	private nodo ult;
+	private Nodo prim;
+	private Nodo ult;
 	private int QuantComandas;
 	
 	//CONSTRUTOR 
@@ -22,17 +22,17 @@ public class ListaS {
 	}
 	
 	//GETTERS E SETTERS
-	public nodo getPrim() {
+	public Nodo getPrim() {
 		return prim;
 	}
-	public void setPrim(nodo prim) {
+	public void setPrim(Nodo prim) {
 		this.prim = prim;
 	}
 	
-	public nodo getUlt() {
+	public Nodo getUlt() {
 		return ult;
 	}
-	public void setUlt(nodo ult) {
+	public void setUlt(Nodo ult) {
 		this.ult = ult;
 	}
 	
@@ -49,8 +49,8 @@ public class ListaS {
 	}
 	
 	//METODO INSERIR NO INICIO
-	public void inserirIni(comanda c) {
-		nodo NvNodo = new nodo(c);
+	public void inserirIni(Comanda c) {
+		Nodo NvNodo = new Nodo(c);
 		if(this.ehVazio()) {
 			this.ult = NvNodo;
 		}
@@ -66,7 +66,7 @@ public class ListaS {
 		if(this.ehVazio()) {
 			msg = "A lista está vazia!";
 		} else {
-			nodo atual = this.prim;
+			Nodo atual = this.prim;
 			while(atual != null) {
 				msg += atual.getC().getComanda() + " -> ";
 				atual = atual.getProx();
@@ -77,8 +77,8 @@ public class ListaS {
 	
 	//METODO PAGA COMANDA
 	public boolean pagaComanda(String numC) {
-		nodo atual = this.prim;
-		nodo ant = null;
+		Nodo atual = this.prim;
+		Nodo ant = null;
 		if(this.ehVazio()) {
 			return false;
 		} else {
@@ -103,7 +103,7 @@ public class ListaS {
 	
 	//METODO DE PESQUISA COMANDA VALOR
 	public double pesquisaValor(String numC) {
-		nodo atual = this.prim;
+		Nodo atual = this.prim;
 		while((atual != null) && (!atual.getC().getComanda().equals(numC))) {
 			atual = atual.getProx();
 		}
@@ -112,7 +112,7 @@ public class ListaS {
 	
 	//METODO DE PESQUISA COMANDA MESA
 		public String pesquisaMesa(String numC) {
-			nodo atual = this.prim;
+			Nodo atual = this.prim;
 			while((atual != null) && (!atual.getC().getComanda().equals(numC))) {
 				atual = atual.getProx();
 			}
@@ -122,22 +122,22 @@ public class ListaS {
 	//MESAS
 	
 	//ATRIBUTOS
-	private nodoMesas primM;
-	private nodoMesas ultM;
+	private NodoMesas primM;
+	private NodoMesas ultM;
 	private int quantMesas;
 	
 	//GETTERS E SETTERS
-	public void setPrimM(nodoMesas primM) {
+	public void setPrimM(NodoMesas primM) {
 		this.primM = primM;
 	}
-	public nodoMesas getPrimM() {
+	public NodoMesas getPrimM() {
 		return primM;
 	}
 	
-	public void setUltM(nodoMesas ultM) {
+	public void setUltM(NodoMesas ultM) {
 		this.ultM = ultM;
 	}
-	public nodoMesas getUltM() {
+	public NodoMesas getUltM() {
 		return ultM;
 	}
 	
@@ -155,8 +155,8 @@ public class ListaS {
 	}
 	
 	//METODO DE INSERSÂO
-	public void inserirIni(mesas m) {
-		nodoMesas NvNodo2 = new nodoMesas(m);
+	public void inserirIni(Mesas m) {
+		NodoMesas NvNodo2 = new NodoMesas(m);
 		if(this.ehVazioM()) {
 			this.ultM = NvNodo2;
 		}
@@ -167,8 +167,8 @@ public class ListaS {
 	}
 	
 	//METODO DE INSERSÂO 2
-	public void inserirUlt(mesas m) {
-		nodoMesas NvNodo2 = new nodoMesas(m);
+	public void inserirUlt(Mesas m) {
+		NodoMesas NvNodo2 = new NodoMesas(m);
 		if(this.ehVazioM()) {
 			this.primM = NvNodo2; 
 		} else {
@@ -181,7 +181,7 @@ public class ListaS {
 	//METODO IMPRESSÃO
 	public String imprimirMesas() {
 		String msg = "";
-		nodoMesas atual = this.primM;
+		NodoMesas atual = this.primM;
 		while(atual != null) {
 			msg += atual.getM().getMesa() + " - ";
 			atual = atual.getProxM();
@@ -191,8 +191,8 @@ public class ListaS {
 
 	//METODO OCUPAR MESA
 	public boolean ocupaMesa(String numM) {
-		nodoMesas atualM = this.primM;
-		nodoMesas antM = null;
+		NodoMesas atualM = this.primM;
+		NodoMesas antM = null;
 		if(this.ehVazioM()) {
 			return false;
 		} else {
@@ -218,7 +218,7 @@ public class ListaS {
 	
 	//METODO DE PESQUISA COMANDA
 	public boolean pesquisaNodo2(String numM) {
-		nodoMesas atual2 = this.primM;
+		NodoMesas atual2 = this.primM;
 		while((atual2 != null) && (!atual2.getM().getMesa().equals(numM))) {
 			atual2 = atual2.getProxM();
 		}

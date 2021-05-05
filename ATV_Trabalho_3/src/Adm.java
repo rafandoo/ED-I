@@ -1,5 +1,5 @@
 
-public class adm {
+public class Adm {
 	
 	//ATRIBUTOS
 	private int quantAtend =0;

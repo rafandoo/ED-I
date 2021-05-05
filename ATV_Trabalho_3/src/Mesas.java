@@ -1,5 +1,5 @@
 
-public class mesas {
+public class Mesas {
 	private String mesa;
 	
 	public String getMesa() {

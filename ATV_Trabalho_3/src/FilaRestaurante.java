@@ -1,5 +1,5 @@
 
-public class filaRestaurante {
+public class FilaRestaurante {
 	
 	//ATRIBUTOS
 	private int[] filaRest;
@@ -17,7 +17,7 @@ public class filaRestaurante {
 	private int totalAlm;
 	
 	//CONSTRUTOR
-	public filaRestaurante() {
+	public FilaRestaurante() {
 		this.filaRest = new int [15];
 		this.filaCX = new int[15];
 		

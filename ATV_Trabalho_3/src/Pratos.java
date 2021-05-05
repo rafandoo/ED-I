@@ -1,5 +1,5 @@
 
-public class pratos{
+public class Pratos{
 
   //ATRIBUTOS DOS PRATOS 
 	private int[] p_pratos;
@@ -7,7 +7,7 @@ public class pratos{
 	private int ultPrato;
 	private int quantPratos;
 	
-	public pratos() {
+	public Pratos() {
 		this.p_pratos = new int[20];
 		this.primPrato = 0;
 		this.ultPrato = 0;
